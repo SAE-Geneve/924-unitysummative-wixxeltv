@@ -38,7 +38,7 @@ public class BoxCatcher : MonoBehaviour
 
     void CatchBox()
     {
-        var hits = Physics.SphereCastAll(transform.position, 1, Vector3.forward);
+        var hits = Physics.SphereCastAll(transform.position, 0.08f, Vector3.forward);
         foreach (var hit in hits)
         {
             if (hit.transform.CompareTag("Box"))

@@ -23,7 +23,8 @@ public class BoxCollector : MonoBehaviour
             GameObject box = Instantiate(coll.gameObject , reSpawnPoint.position, quaternion.identity);
             Destroy(coll.gameObject);
             GameManager.boxCount++;
-           
+            box.tag = "Nothing";
+            box.layer = LayerMask.NameToLayer("Nothing");
             Destroy(box, 4);
         }
     }
