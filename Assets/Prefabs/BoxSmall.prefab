@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3487495913732295911, guid: 7091e50ec94ca554a878fe1fd70ef218, type: 3}
       propertyPath: m_Name
-      value: Box
+      value: BoxSmall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
