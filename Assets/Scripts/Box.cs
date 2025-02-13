@@ -4,6 +4,7 @@ public class Box : MonoBehaviour
 {
     private Rigidbody rb = null;
     private bool goForeward = false;
+    private bool isExit = false;
     [SerializeField]private float boxSpeed = 0.1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,12 +17,8 @@ public class Box : MonoBehaviour
     {
         if (goForeward)
         {
-            //Debug.Log("YEAH");
-            Vector3 initialForce = new Vector3(1,0,0) * boxSpeed;
-           /* if (rb != null)
-            {
-                initialForce += rb.linearVelocity;
-            }*/
+            Vector3 initialForce;
+            initialForce = isExit ? new Vector3(0,0,1) * boxSpeed : new Vector3(1,0,0) * boxSpeed;
             rb.AddForce(initialForce, ForceMode.Impulse);
         }
        
@@ -29,16 +26,7 @@ public class Box : MonoBehaviour
 
     private void OnCollisionEnter(Collision coll)
     {
-        //Debug.Log(coll.gameObject.name);
-        if (coll.gameObject.CompareTag("Conveyor"))
-        {
-            goForeward = true;
-        }
-        else
-        {
-            goForeward = false;
-        }
-           
-            
+        goForeward = coll.gameObject.CompareTag("Conveyor") || coll.gameObject.CompareTag("ExitConveyor");
+        isExit = coll.gameObject.CompareTag("ExitConveyor");
     }
 }
