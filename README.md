@@ -18,3 +18,4 @@ https://github.com/SAE-Geneve/sae-geneve-924-924-unitysummative-924-UnitySummati
   - Feedback : animation de disparition des carton
   - Gestion de la distribution : Les convoyeurs fonctionnent ensemble, le nombre de boites en attente est limité
   - Gestion de la distribution : Les convoyeurs distribuent à tour de role les cartons
+  - Add Mobile cameras
